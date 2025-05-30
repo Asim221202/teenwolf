@@ -1,0 +1,114 @@
+{
+  "533727549625204747": {
+    "balance": 17900,
+    "lastClaimed": 1737565163504,
+    "bank": 0,
+    "lastDaily": 1737633511419
+  },
+  "564468317977575443": {
+    "balance": 24900,
+    "lastClaimed": 1737658746373,
+    "lastDaily": 1737658749333,
+    "inventory": [
+      "Orta Seviye Araçlar",
+      "Orta Seviye Araçlar"
+    ]
+  },
+  "1133346048467804181": {
+    "balance": 16400,
+    "lastClaimed": 1737574941936,
+    "lastDaily": 1737600010517,
+    "bank": 0
+  },
+  "603605988804788423": {
+    "balance": 20500,
+    "lastClaimed": 1737570603179,
+    "bank": 0,
+    "lastDaily": 1737661462232
+  },
+  "1097840178564972665": {
+    "balance": 500,
+    "lastClaimed": 1737632796888,
+    "bank": 9500,
+    "inventory": [
+      "Orta Seviye Araçlar",
+      "Dublex Ev"
+    ]
+  },
+  "1316451035614679110": {
+    "balance": 6501,
+    "bank": 0
+  },
+  "1203760464484634686": {
+    "balance": 5200,
+    "bank": 0,
+    "lastDaily": 1737612824942
+  },
+  "907997459345727538": {
+    "balance": 1000,
+    "bank": 0
+  },
+  "1017033200188526663": {
+    "balance": 3400,
+    "bank": 0
+  },
+  "996355790631862272": {
+    "balance": 0,
+    "bank": 5500,
+    "lastDaily": 1737590915935
+  },
+  "722209703664549931": {
+    "balance": 2100,
+    "bank": 0,
+    "lastDaily": 1737570199079,
+    "inventory": [
+      "Gün Işığı Takıları"
+    ]
+  },
+  "411916947773587456": {
+    "balance": 0,
+    "bank": 0,
+    "inventory": []
+  },
+  "1282135395621929053": {
+    "balance": 4000,
+    "bank": 0
+  },
+  "1289393005102628949": {
+    "balance": 4500,
+    "bank": 0,
+    "lastDaily": 1737597876283
+  },
+  "1264702506684911667": {
+    "balance": 4600,
+    "bank": 0,
+    "lastDaily": 1737587216412
+  },
+  "686219507034882132": {
+    "balance": 1000,
+    "bank": 500,
+    "lastDaily": 1737507907806
+  },
+  "1070095928725344370": {
+    "balance": 3660,
+    "bank": 0,
+    "lastDaily": 1737648721357,
+    "inventory": [
+      "Gilbert Yüzüğü"
+    ]
+  },
+  "854363741986095144": {
+    "balance": 1000,
+    "lastClaimed": 1737549473180,
+    "bank": 0,
+    "lastDaily": 1737549498180,
+    "inventory": [
+      "Gün Işığı Takıları"
+    ]
+  },
+  "1265809975020621888": {
+    "balance": 1800,
+    "bank": 0,
+    "lastDaily": 1737597876180
+  }
+}
