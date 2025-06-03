@@ -24,9 +24,15 @@ fs.readdirSync(commandsDir).forEach(file => {
 });
 require('./komutlar/activityWatcher');
 
-mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(() => console.log('MongoDB\'ye başarıyla bağlandı!'))
-  .catch(err => console.error('MongoDB bağlantı hatası:', err));
+
+mongoose.connect(process.env.MONGO_URI, { // veya doğrudan bağlantı dizesi
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+}).then(() => {
+    console.log('MongoDB\'ye başarıyla bağlandı!');
+}).catch(err => {
+    console.error('MongoDB bağlantı hatası:', err);
+});
 const kelime = require('./komutlar/kelime');
 const hkelime = require('./komutlar/hkelime');
 
