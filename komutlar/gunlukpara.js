@@ -1,23 +1,9 @@
 const { MessageEmbed } = require('discord.js');
-const mongoose = require('mongoose');
+// const mongoose = require('mongoose'); // Artık burada mongoose'a gerek yok
 
-// MongoDB bağlantısının ana dosyada yapıldığını varsayıyoruz.
-
-// Mongoose şeması
-const balanceSchema = new mongoose.Schema({
-    _id: String, // Discord kullanıcı ID'si
-    balance: { type: Number, default: 0 },
-    bank: { type: Number, default: 0 }
-});
-
-const lastClaimedSchema = new mongoose.Schema({
-    _id: String, // Discord kullanıcı ID'si
-    lastClaimed: { type: Number, default: 0 }
-});
-
-// Mongoose modelleri
-const Balance = mongoose.model('Balance', balanceSchema);
-const LastClaimed = mongoose.model('LastClaimed', lastClaimedSchema);
+// Modelleri merkezi dosyalardan içe aktar
+const Balance = require('../models/Balance'); // Yolunuzu projenizin yapısına göre ayarlayın
+const LastClaimed = require('../models/LastClaimed'); // Yolunuzu projenizin yapısına göre ayarlayın
 
 module.exports = {
     name: "günlük",
