@@ -1,21 +1,8 @@
 const { MessageEmbed } = require('discord.js');
-const mongoose = require('mongoose');
+// const mongoose = require('mongoose'); // Artık burada mongoose'a gerek yok
 
-// MongoDB bağlantı URI'si artık ortam değişkeninden alınıyor
-// NOT: mongoose.connect() çağrısının botunuzun ana dosyasında bir kez yapıldığını varsayıyoruz.
-// Bu komut dosyası sadece modeli tanımlar ve veritabanı etkileşimini yapar.
-// const MONGO_URI = process.env.MONGO_URI; // Bu satıra artık burada gerek yok, ana dosyadan bağlanıyoruz
-
-// Mongoose şeması (verilerinizin yapısını tanımlar)
-const balanceSchema = new mongoose.Schema({
-    _id: String, // Discord kullanıcı ID'si (string olarak)
-    balance: { type: Number, default: 0 },
-    bank: { type: Number, default: 0 }
-});
-
-// Mongoose modeli (veritabanı koleksiyonunu temsil eder)
-// 'Balance' yerine koleksiyonunuzun gerçek adını kullanabilirsiniz.
-const Balance = mongoose.model('Balance', balanceSchema);
+// Modeli merkezi dosyadan içe aktar
+const Balance = require('../models/Balance'); // Yolunuzu projenizin yapısına göre ayarlayın
 
 // --- MongoDB ile etkileşim fonksiyonları ---
 async function getUserBalance(userId) {
@@ -28,6 +15,7 @@ async function getUserBalance(userId) {
     }
 }
 
+// Bu fonksiyonu diğer komutlarınızda (para verme, para çekme vb.) kullanabilirsiniz.
 async function updateUserBalance(userId, walletChange = 0, bankChange = 0) {
     try {
         await Balance.findByIdAndUpdate(
@@ -35,6 +23,7 @@ async function updateUserBalance(userId, walletChange = 0, bankChange = 0) {
             { $inc: { balance: walletChange, bank: bankChange } },
             { upsert: true, new: true, setDefaultsOnInsert: true }
         );
+        // console.log(`${userId} kullanıcısının bakiyesi güncellendi.`);
     } catch (error) {
         console.error(`Kullanıcı bakiyesi güncellenirken hata oluştu (${userId}):`, error);
     }
@@ -43,7 +32,7 @@ async function updateUserBalance(userId, walletChange = 0, bankChange = 0) {
 module.exports = {
     name: "bakiye",
     description: "Kullanıcının cüzdan ve banka bakiyesini gösterir. Yetkililer başkalarının bakiyesini görebilir.",
-    async execute(message, args) {
+    async execute(message, args) { // Asenkron hale getirildi
         function checkUserRole(roleName) {
             return message.member.roles.cache.some(role => role.name === roleName);
         }
